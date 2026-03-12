@@ -1,0 +1,9 @@
+nav span svg {
+    width: 25px;
+    height: auto;
+    margin-right: 0.5em;
+}
+
+nav span svg * {
+    fill: currentColor!important;
+}
