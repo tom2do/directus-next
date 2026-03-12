@@ -9,8 +9,9 @@ const InlineSVG = ({ src, className }) => {
         if (!src) return;
 
         const proxySrc = src.replace(`${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/`, '/directus-assets/');
+        const fetchUrl = typeof window !== 'undefined' ? (window.location.origin + proxySrc) : proxySrc;
         
-        fetch(proxySrc, { cache: 'no-store' })
+        fetch(fetchUrl, { cache: 'no-store' })
             .then(response => response.text())
             .then(data => {
 

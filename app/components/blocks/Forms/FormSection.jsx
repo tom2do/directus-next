@@ -30,7 +30,9 @@ export default function FormSection( data ) {
         setError('');
 
         try {
-            const baseUrl = typeof window !== 'undefined' ? '/directus-api' : process.env.NEXT_PUBLIC_DIRECTUS_URL;
+            const baseUrl = typeof window !== 'undefined' 
+                ? (window.location.origin + '/directus-api') 
+                : process.env.NEXT_PUBLIC_DIRECTUS_URL;
             const response = await fetch(`${baseUrl}/items/form_submissions`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
