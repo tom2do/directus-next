@@ -8,7 +8,9 @@ const InlineSVG = ({ src, className }) => {
     useEffect(() => {
         if (!src) return;
 
-        fetch(src, { cache: 'no-store' })
+        const proxySrc = src.replace(`${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/`, '/directus-assets/');
+        
+        fetch(proxySrc, { cache: 'no-store' })
             .then(response => response.text())
             .then(data => {
 

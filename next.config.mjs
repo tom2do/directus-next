@@ -9,6 +9,14 @@ const nextConfig = {
             },
         ],
     },
+    async rewrites() {
+        return [
+            {
+                source: '/directus-assets/:path*',
+                destination: `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/:path*`,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
