@@ -15,6 +15,10 @@ const nextConfig = {
                 source: '/directus-assets/:path*',
                 destination: `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/:path*`,
             },
+            {
+                source: '/directus-api/:path*',
+                destination: `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/:path*`,
+            },
         ];
     },
 };
