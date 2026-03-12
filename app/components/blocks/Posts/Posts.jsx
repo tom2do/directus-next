@@ -81,6 +81,7 @@ export default function Posts({ tagline, headline, limit = 6 }) {
 }
 
 function Post({ id, title, author, slug, description, post_image, content, date_created }) {
+
     return (
         <div className={'card'}>
             <Image
@@ -88,6 +89,7 @@ function Post({ id, title, author, slug, description, post_image, content, date_
                 alt={post_image.title}
                 width={400}
                 height={300}
+                style={{ height: 'auto'}}
                 className="gallery-image"
             />
             <h2>{title}</h2>

@@ -16,7 +16,7 @@ const nextConfig = {
                 headers: [
                     {
                         key: 'Content-Security-Policy',
-                        value: "frame-ancestors 'self' https://directus.2do-dev25.de;",
+                        value: "frame-ancestors 'self' https://directus.2do-dev25.de",
                     },
                 ],
             },
